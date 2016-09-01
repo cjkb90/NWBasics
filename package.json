@@ -1,0 +1,20 @@
+{
+  "name": "nwbasics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjkb90/NWBasics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjkb90/NWBasics/issues"
+  },
+  "homepage": "https://github.com/cjkb90/NWBasics#readme"
+}
