@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var routes = require(__dirname + '/server/routes/');
+var routes = require(__dirname + '/server/routes/index.js');
 
 app.use(routes);
 
