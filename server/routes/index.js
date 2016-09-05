@@ -7,6 +7,7 @@ var apiIndex = require('./apiIndex.js');
 
 var landingPage = path.join(__dirname, '..', '..', '/public/index.html');
 
+router.use('/browser', express.static(path.join(__dirname, '..', '..', 'browser')));
 router.use('/api', apiIndex);
 
 router.get('/products', function(req, res){
