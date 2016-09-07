@@ -1,8 +1,9 @@
 'use strict';
 
-app.controller('ProductCtrl', function($scope, ProductFactory){
+app.controller('ProductCtrl', function($scope, ProductFactory, products){
 	$scope.alphabet = ProductFactory.alphabet;
-	$scope.newProduct = function(prodName){
-		return ProductFactory.newProduct(prodName);
+	$scope.products = products;
+	$scope.newProduct = function(product){
+		return ProductFactory.newProduct(product);
 	}
 });

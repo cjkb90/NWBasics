@@ -1,0 +1,15 @@
+<div class="container">
+	<form>
+		Product Name: <input type="text" name="prodName" ng-model="product.name">
+		Quantity: <input type="text" name="prodQuantity" ng-model="product.quantity">
+		<input type="submit" value="Submit" ng-click="newProduct(product)">
+	</form>
+	<div>
+		<div class="col-xs-6">
+			<li ng-repeat='letter in alphabet'>{{letter}}</li>
+		</div>
+		<div class="col-xs-6">
+			<li ng-repeat='product in products'>Product:{{product.name}}</li>
+		</div>
+	</div>
+</div>

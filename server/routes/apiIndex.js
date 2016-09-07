@@ -5,7 +5,27 @@ var db = require(path.join(__dirname, '..', 'index.js'));
 var Product = db.Product;
 
 router.get('/products', function(req, res){
-	res.send('These are all of our products');
+	Product.find()
+	.then(function(response){
+		res.send(response);
+	})
+});
+
+router.post('/products', function(req, res){
+	var newProd = new Product({name: req.body.name, quantity: req.body.quantity});
+	newProd.save()
+	.then(function(response){
+		res.send(response);
+	})
+});
+
+router.delete('/products', function(req, res){
+	Product.findOne({_id: req.body.id})
+	.remove()
+	.exec()
+	.catch(function(err){
+		throw(err);
+	})
 });
 
 module.exports = router;

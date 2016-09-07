@@ -4,20 +4,25 @@
 	<title>Northwind Basics</title>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/angular.ui-router/1.0.0-alpha0/angular-ui-router.min.js" defer></script>
 	<!-- Custom Angular files -->
 	<script src="/browser/main.js" defer></script>
+	<script src="/browser/states.js" defer></script>
 	<script src="/browser/products/controller.js" defer></script>
 	<script src="/browser/products/factory.js" defer></script>
 </head>
 <body ng-app="app">
-	<h2>You are home!</h2>
-	<div class="container" ng-controller="ProductCtrl">
-		<form>
-			Product Name: <input type="text" name="prodName" ng-model="product.name">
-			Quantity: <input type="text" name="prodQuantity" ng-model="product.quantity">
-			<input type="submit" value="Submit" ng-click="newProduct(product.name)">
-		</form>
-		<li ng-repeat='letter in alphabet'>{{letter}}</li>
+	<div class="container">
+		<div class="col-xs-1">
+			<a href="/">Home</a>
+		</div>
+		<div class="col-xs-1">
+			<a ui-sref="products">Products</a>
+		</div>
+	</div>
+	<h2>Welcome to NW Basics!</h2>
+	<div>
+		<ui-view></ui-view>
 	</div>
 </body>
 
