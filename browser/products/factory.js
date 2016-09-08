@@ -26,5 +26,16 @@ app.factory('ProductFactory', function($http){
 		})
 	};
 
+	ProductFactory.deleteProd = function(prod){
+		return $http.delete('/api/products/' + prod._id)
+		.then(function(response){
+			console.log("RESPONSE IS: ", response)
+			return response.data;
+		})
+		.catch(function(err){
+			throw(err);
+		})
+	}
+
 	return ProductFactory;
 })

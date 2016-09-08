@@ -19,8 +19,8 @@ router.post('/products', function(req, res){
 	})
 });
 
-router.delete('/products', function(req, res){
-	Product.findOne({_id: req.body.id})
+router.delete('/products/:prodId', function(req, res){
+	Product.findOne({_id: req.params.prodId})
 	.remove()
 	.exec()
 	.catch(function(err){

@@ -9,7 +9,7 @@ var apiIndex = require('./apiIndex.js');
 var landingPage = path.join(__dirname, '..', '..', '/public/index.html');
 
 router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({extended: false}));
+router.use(bodyParser.urlencoded({extended: true}));
 
 router.use('/browser', express.static(path.join(__dirname, '..', '..', 'browser')));
 router.use('/api', apiIndex);

@@ -9,7 +9,10 @@
 			<li ng-repeat='letter in alphabet'>{{letter}}</li>
 		</div>
 		<div class="col-xs-6">
-			<li ng-repeat='product in products'>Product:{{product.name}}</li>
+			<div class="col-xs-12" ng-repeat='product in products'>
+				<li class="col-xs-4">Product: {{product.name}}</li>
+				<button class="col-xs-2" ng-click="deleteProd(product)">Delete</button>
+			</div>
 		</div>
 	</div>
 </div>
