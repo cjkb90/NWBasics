@@ -9,10 +9,11 @@ app.controller('ProductCtrl', function($scope, ProductFactory, products){
 	}
 	$scope.deleteProd = function(product){
 		ProductFactory.deleteProd(product);
-		refreshProducts();
+		//refreshProducts();
 	}
 
 	var refreshProducts = function(){
+		//Do I really need this or is there a better way?
 		ProductFactory.products()
 		.then(function(products){
 			$scope.products = products;

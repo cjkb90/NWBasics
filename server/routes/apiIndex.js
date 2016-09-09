@@ -11,6 +11,16 @@ router.get('/products', function(req, res){
 	})
 });
 
+router.get('/products/:letter', function(req, res){
+	var letter = new RegExp('^'+req.params.letter,'i');
+	Product.find({
+		"name": { "$regex": letter } 
+	})
+	.then(function(response){
+		res.send(response);
+	})
+});
+
 router.post('/products', function(req, res){
 	var newProd = new Product({name: req.body.name, quantity: req.body.quantity});
 	newProd.save()

@@ -12,14 +12,14 @@ app.config(function($stateProvider){
 				}
 			}
 		})
-		// .state('products.list', {
-		// 	url: '/list',
-		// 	templateUrl: '/browser/products/productsList.html',
-		// 	controller: 'ProductListCtrl',
-		// 	resolve: {
-		// 		miniature: function(){
-		// 			return "I am miniature"
-		// 		}
-		// 	}
-		// })
+		.state('products.details', {
+			url: '/:letter',
+			templateUrl: '/browser/products/productsDetails.html',
+			controller: 'ProductCtrl',
+			resolve: {
+				products: function($stateParams, ProductFactory){
+					return ProductFactory.productsByLetter($stateParams.letter);
+				}
+			}
+		})
 })

@@ -15,6 +15,16 @@ app.factory('ProductFactory', function($http){
 		})
 	}
 
+	ProductFactory.productsByLetter = function(letter){
+		return $http.get('/api/products/' + letter)
+		.then(function(response){
+			return response.data;
+		})
+		.catch(function(err){
+			throw(err);
+		})
+	}
+
 	ProductFactory.newProduct = function(prod){
 		return $http.post('/api/products', prod)
 		.then(function(response){

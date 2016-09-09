@@ -1,0 +1,7 @@
+<div class="col-xs-12" ng-repeat='product in products'>
+	<div class="col-xs-3">
+		<li>Product: {{product.name}} - Qty: {{product.quantity}}</li>
+	</div>
+	<button class="col-xs-1" ng-click="deleteProd(product)">Delete</button>
+	<ui-view></ui-view>
+</div>

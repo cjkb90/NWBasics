@@ -4,15 +4,10 @@
 		Quantity: <input type="text" name="prodQuantity" ng-model="product.quantity">
 		<input type="submit" value="Submit" ng-click="newProduct(product)">
 	</form>
-	<div>
-		<div class="col-xs-6">
-			<li ng-repeat='letter in alphabet'>{{letter}}</li>
-		</div>
-		<div class="col-xs-6">
-			<div class="col-xs-12" ng-repeat='product in products'>
-				<li class="col-xs-4">Product: {{product.name}}</li>
-				<button class="col-xs-2" ng-click="deleteProd(product)">Delete</button>
-			</div>
-		</div>
+	<div class="col-xs-12 well well-sm">
+		<li class="col-xs-1" ng-repeat='letter in alphabet' ui-sref="products.details({letter:letter})">{{letter}}</li>
+	</div>
+	<div class="col-xs-12">
+		<ui-view></ui-view>
 	</div>
 </div>
